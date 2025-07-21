@@ -35,7 +35,7 @@ struct ContentView: View {
                         Text("Trivia")
                             .font(.custom("PartyLetPlain", size: 60))
                     }
-//                    .padding(70)
+                    .padding(70)
                     
                     Spacer()
                 }
