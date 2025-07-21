@@ -23,16 +23,21 @@ struct ContentView: View {
                     }
                 
                 VStack {
-                    Image(systemName: "bolt.fill")
-                        .imageScale(.large)
-                        .font(.largeTitle)
+                    VStack {
+                        Image(systemName: "bolt.fill")
+                            .imageScale(.large)
+                            .font(.largeTitle)
+                        
+                        Text("Flucom")
+                            .font(.custom("PartyLetPlain", size: 70))
+                            .padding(.bottom, -50)
+                        
+                        Text("Trivia")
+                            .font(.custom("PartyLetPlain", size: 60))
+                    }
+//                    .padding(70)
                     
-                    Text("Flucom")
-                        .font(.custom("PartyLetPlain", size: 70))
-                        .padding(.bottom, -50)
-                    
-                    Text("Trivia")
-                        .font(.custom("PartyLetPlain", size: 60))
+                    Spacer()
                 }
             }
             .frame(width: geo.size.width, height: geo.size.height)
