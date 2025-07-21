@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Instructions: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         ZStack {
             Image(.parchment)
@@ -40,10 +42,16 @@ struct Instructions: View {
                     
                     Text("Good Luck!")
                         .font(.title)
-                    
-                    
                 }
-                .border(.green, width: 2)
+                
+                Button("Done") {
+                    dismiss()
+                }
+                .font(.largeTitle)
+                .padding()
+                .buttonStyle(.borderedProminent)
+                .tint(.brown.mix(with: .black, by: 0.2))
+                .foregroundColor(.white)
             }
             
         }
