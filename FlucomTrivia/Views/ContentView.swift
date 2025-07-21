@@ -47,6 +47,23 @@ struct ContentView: View {
                     .animation(.easeOut(duration: 0.7).delay(2), value: animateViewsIn)
                     
                     Spacer()
+                    Spacer()
+                    Spacer()
+
+                    Button {
+                        
+                    } label: {
+                        Text("Play")
+                            .font(.largeTitle)
+                            .foregroundStyle(.white)
+                            .padding(.vertical, 7)
+                            .padding(.horizontal, 50)
+                            .background(.brown)
+                            .clipShape(.rect(cornerRadius: 7))
+                            .shadow(radius: 5)
+                    }
+                    
+                    Spacer()
                 }
             }
             .frame(width: geo.size.width, height: geo.size.height)
@@ -54,7 +71,7 @@ struct ContentView: View {
         .ignoresSafeArea()
         .onAppear {
             animateViewsIn = true
-            playAudio()
+//            playAudio()
         }
     }
     
