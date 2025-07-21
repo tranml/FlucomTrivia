@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var animateViewsIn = false
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -24,18 +26,23 @@ struct ContentView: View {
                 
                 VStack {
                     VStack {
-                        Image(systemName: "bolt.fill")
-                            .imageScale(.large)
-                            .font(.largeTitle)
-                        
-                        Text("Flucom")
-                            .font(.custom("PartyLetPlain", size: 70))
-                            .padding(.bottom, -50)
-                        
-                        Text("Trivia")
-                            .font(.custom("PartyLetPlain", size: 60))
+                        if animateViewsIn {
+                            VStack {
+                                Image(systemName: "bolt.fill")
+                                    .imageScale(.large)
+                                    .font(.largeTitle)
+                                
+                                Text("Flucom")
+                                    .font(.custom("PartyLetPlain", size: 70))
+                                    .padding(.bottom, -50)
+                                
+                                Text("Trivia")
+                                    .font(.custom("PartyLetPlain", size: 60))
+                            }
+                            .padding(70)
+                        }
                     }
-                    .padding(70)
+                    .animation(.easeOut(duration: 0.7).delay(2), value: animateViewsIn)
                     
                     Spacer()
                 }
@@ -43,6 +50,9 @@ struct ContentView: View {
             .frame(width: geo.size.width, height: geo.size.height)
         }
         .ignoresSafeArea()
+        .onAppear {
+            animateViewsIn = true
+        }
     }
 }
 
